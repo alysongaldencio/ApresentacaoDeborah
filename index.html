@@ -452,7 +452,7 @@
                         <tbody>
                             <tr>
                                 <td>Nº de atestados</td>
-                                <td>21</td>
+                                <td>27</td>
                                 <td>-</td>
                             </tr>
                             <tr>
@@ -666,7 +666,7 @@
                 </div>
                 
                 <div class="section">
-                    <h2> Desperdício</h2>
+                    <h2> Desperdiçometro</h2>
                     <div class="chart-container">
                         <canvas id="nutricaoDesperdicioChart"></canvas>
                     </div>
@@ -692,6 +692,14 @@
                                 <tr>
                                     <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;"> Meta Coletiva de Recursos</td>
                                     <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Estimular o uso consciente de recursos e evitar desperdícios, estabelecendo uma meta coletiva mensal. Caso a equipe alcance a meta, o grupo será recompensado com um almoço especial ao final do mês.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;"> Cálculo da Dieta Per Capita</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">O cálculo da dieta per capita é realizado diariamente e, em 90% das vezes, corresponde corretamente à quantidade solicitada.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;"> Teste de Qualidade Sensorial</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">O teste de qualidade sensorial é aprovado em 80% das avaliações.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2236,7 +2244,7 @@
                         data: {
                             labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto'],
                             datasets: [{
-                                label: 'Desperdício (KG)',
+                                label: 'Desperdiçometro (KG)',
                                 data: [84.8, 75.3, 58.7, 77.1, 76.1, 71.7, 87.3, 88.2],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.8)', // Vermelho
@@ -2250,6 +2258,28 @@
                                 ],
                                 borderWidth: 2,
                                 borderColor: '#fff'
+                            }, {
+                                label: 'Faixa Mínima Normal',
+                                data: [36.23, 36.23, 36.23, 36.23, 36.23, 36.23, 36.23, 36.23],
+                                type: 'line',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 0,
+                                pointHoverRadius: 0
+                            }, {
+                                label: 'Faixa Máxima Normal',
+                                data: [108.68, 108.68, 108.68, 108.68, 108.68, 108.68, 108.68, 108.68],
+                                type: 'line',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 0,
+                                pointHoverRadius: 0
                             }]
                         },
                         options: {
@@ -2652,13 +2682,13 @@
                         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
                         datasets: [{
                             label: 'Projetos (R$)',
-                            data: [77825.11, 91216.58, 71910.69, 74886.30, 79562.65, 69107.42, 80557.04, 76818.95],
+                            data: [77825.11, 80216.58, 71910.69, 74886.30, 79562.65, 76107.42, 80557.20, 76818.95],
                             backgroundColor: 'rgba(102, 126, 234, 0.8)',
                             borderColor: 'rgba(102, 126, 234, 1)',
                             borderWidth: 2
                         }, {
                             label: 'CAF (R$)',
-                            data: [23689.66, 15985.51, 33264.69, 32408.62, 32770.18, 36405.91, 21835.14, 35369.68],
+                            data: [23689.66, 26985.51, 33264.69, 32408.62, 32770.18, 29405.91, 32770.18, 35369.68],
                             backgroundColor: 'rgba(255, 99, 132, 0.8)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 2
@@ -3536,7 +3566,7 @@
                         data: {
                             labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
                             datasets: [{
-                                label: 'Desperdício (KG)',
+                                label: 'Desperdiçometro (KG)',
                                 data: [84.8, 75.3, 58.7, 77.1, 76.1, 71.7, 87.3, 88.2],
                                 backgroundColor: [
                                     'rgba(255, 99, 132, 0.8)', // Vermelho
@@ -3561,6 +3591,28 @@
                                 borderWidth: 2,
                                 borderRadius: 4,
                                 borderSkipped: false
+                            }, {
+                                label: 'Faixa Mínima Normal',
+                                data: [36.23, 36.23, 36.23, 36.23, 36.23, 36.23, 36.23, 36.23],
+                                type: 'line',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 0,
+                                pointHoverRadius: 0
+                            }, {
+                                label: 'Faixa Máxima Normal',
+                                data: [108.68, 108.68, 108.68, 108.68, 108.68, 108.68, 108.68, 108.68],
+                                type: 'line',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                                borderWidth: 2,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 0,
+                                pointHoverRadius: 0
                             }]
                         },
                         options: {
@@ -3579,7 +3631,7 @@
                                     callbacks: {
                                         label: function(context) {
                                             const value = context.parsed.y;
-                                            return `Desperdício: ${value} KG`;
+                                            return `Desperdiçometro: ${value} KG`;
                                         }
                                     }
                                 }
