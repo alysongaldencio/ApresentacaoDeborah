@@ -1935,16 +1935,21 @@
 
 
         function initializeSlideCharts(slideIndex) {
-            // Verificar se os gráficos já foram inicializados
-            if (window.chartsInitialized && window.chartsInitialized[slideIndex]) {
-                return;
-            }
+            // Para slides com sistema de destruir/recriar, não verificar inicialização
+            const skipInitCheck = [1]; // Slides que sempre recriam gráficos
             
-            if (!window.chartsInitialized) {
-                window.chartsInitialized = {};
+            if (!skipInitCheck.includes(slideIndex)) {
+                // Verificar se os gráficos já foram inicializados
+                if (window.chartsInitialized && window.chartsInitialized[slideIndex]) {
+                    return;
+                }
+                
+                if (!window.chartsInitialized) {
+                    window.chartsInitialized = {};
+                }
+                
+                window.chartsInitialized[slideIndex] = true;
             }
-            
-            window.chartsInitialized[slideIndex] = true;
             
             // Inicializar gráficos baseado no slide atual
             if (slideIndex === 0) { // Slide 1: Calendário (sem gráficos)
@@ -1955,7 +1960,12 @@
                 // Gráfico de Consultas
                 const consultasCtx = document.getElementById('consultasChart');
                 if (consultasCtx) {
-                new Chart(consultasCtx, {
+                    // Destruir gráfico existente se houver
+                    if (window.consultasChartInstance) {
+                        window.consultasChartInstance.destroy();
+                    }
+                    
+                    window.consultasChartInstance = new Chart(consultasCtx, {
                     type: 'line',
                     data: {
                         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
@@ -1984,13 +1994,18 @@
                             legend: { position: 'top' }
                         }
                     }
-                });
+                    });
                 }
 
                 // Gráfico de Sessões
                 const sessoesCtx = document.getElementById('sessoesChart');
                 if (sessoesCtx) {
-                new Chart(sessoesCtx, {
+                    // Destruir gráfico existente se houver
+                    if (window.sessoesChartInstance) {
+                        window.sessoesChartInstance.destroy();
+                    }
+                    
+                    window.sessoesChartInstance = new Chart(sessoesCtx, {
                     type: 'line',
                     data: {
                         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
@@ -2019,7 +2034,7 @@
                             legend: { position: 'top' }
                         }
                     }
-                });
+                    });
                 }
             }
             
