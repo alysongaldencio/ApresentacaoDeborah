@@ -561,6 +561,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>AÇÕES DO SERVIÇO SOCIAL</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Orientação sobre Prioridades</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Sala de espera para informar aos usuários sobre o que é considerado prioridade por lei, incluindo pacientes com necessidades especiais, idosos, gestantes e pessoas com condições de saúde que exigem atendimento imediato</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Transparência no Atendimento</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Sala de espera para explicar como funciona a espera para consultas médicas, garantindo transparência sobre o tempo estimado e a ordem de atendimento</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Processo de Agendamento</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Sala de espera para explicar sobre a marcação de consultas: Detalhar o processo de agendamento de consultas na unidade, incluindo procedimentos e documentos necessários</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Acompanhamento de Famílias com Microcefalia</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Orientar e apoiar as famílias para o acompanhamento contínuo da criança, preparando-as para a possível alta hospitalar e garantindo que saibam como manter os cuidados necessários em casa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Slide 6: Psicologia -->
@@ -1410,7 +1444,7 @@
         <!-- Slide 17: Teto Especialidades -->
         <div class="slide" id="slide17">
             <div class="header">
-                <h1> Controle de Teto - Especialidades</h1>
+                <h1> Projetos</h1>
                 <p>Monitoramento dos Custos Mensais vs Teto Estabelecido | Janeiro - Agosto 2025</p>
             </div>
             
@@ -2167,7 +2201,7 @@
                             labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
                             datasets: [{
                                 label: 'Gastos com Almoço (R$)',
-                                data: [1200, 1350, 1100, 1400, 1300, 1250, 1450, 1500],
+                                data: [34793.10, 35041.20, 29790.50, 36339.00, 38854.00, 32886.80, 41329.70, 35611.90],
                                 borderColor: '#FF6384',
                                 backgroundColor: 'rgba(255, 99, 132, 0.1)',
                                 borderWidth: 3,
@@ -2607,7 +2641,12 @@
                 // Gráfico Projetos x CAF
                 const consumoNotasCtx = document.getElementById('consumoNotasChart');
                 if (consumoNotasCtx) {
-                new Chart(consumoNotasCtx, {
+                    // Destruir gráfico existente se houver
+                    if (window.consumoNotasChartInstance) {
+                        window.consumoNotasChartInstance.destroy();
+                    }
+                    
+                    window.consumoNotasChartInstance = new Chart(consumoNotasCtx, {
                     type: 'bar',
                     data: {
                         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
@@ -2660,6 +2699,9 @@
                                 }
                             },
                             tooltip: {
+                                enabled: true,
+                                mode: 'index',
+                                intersect: false,
                                 callbacks: {
                                     label: function(context) {
                                         const value = context.parsed.y;
