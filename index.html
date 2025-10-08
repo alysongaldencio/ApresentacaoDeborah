@@ -175,6 +175,25 @@
             line-height: 1.5;
         }
 
+        /* Cores personalizadas para a legenda do gráfico Neuropediatria */
+        .chartjs-legend-item-0 {
+            color: #374151 !important;
+        }
+        
+        .chartjs-legend-item-1 {
+            color: #9CA3AF !important;
+        }
+        
+        .chartjs-legend-item-0 .chartjs-legend-marker {
+            background-color: #374151 !important;
+            border-color: #374151 !important;
+        }
+        
+        .chartjs-legend-item-1 .chartjs-legend-marker {
+            background-color: #9CA3AF !important;
+            border-color: #9CA3AF !important;
+        }
+
         .summary-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2365,40 +2384,178 @@
                     window.neuropediatriaAtendimentosChartInstance = new Chart(neuropediatriaAtendimentosCtx, {
                         type: 'bar',
                         data: {
-                            labels: ['Consultas de Neuropediatria', 'Avaliação da Fonoaudiologia', 'Avaliação da Terapia Ocupacional', 'Avaliação da Psicologia'],
+                            labels: [
+                                'Neuropediatria',
+                                'Fonoaudiologia',
+                                'Terapia Ocupacional',
+                                'Psicologia'
+                            ],
                             datasets: [{
-                                label: 'Atendimentos',
+                                label: 'Atendimentos Totais',
                                 data: [69, 40, 22, 8],
-                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 2
+                                backgroundColor: [
+                                    'rgba(99, 102, 241, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)'
+                                ],
+                                borderColor: [
+                                    'rgba(99, 102, 241, 1)',
+                                    'rgba(16, 185, 129, 1)',
+                                    'rgba(245, 158, 11, 1)',
+                                    'rgba(239, 68, 68, 1)'
+                                ],
+                                borderWidth: 3,
+                                borderRadius: 8,
+                                borderSkipped: false,
+                                hoverBackgroundColor: [
+                                    'rgba(99, 102, 241, 0.9)',
+                                    'rgba(16, 185, 129, 0.9)',
+                                    'rgba(245, 158, 11, 0.9)',
+                                    'rgba(239, 68, 68, 0.9)'
+                                ],
+                                pointBackgroundColor: '#374151',
+                                pointBorderColor: '#374151',
+                                pointStyle: 'rect',
+                                legendColor: '#374151'
                             }, {
-                                label: 'Diagnósticos',
+                                label: 'Diagnósticos na UPAE',
                                 data: [22, 13, 6, 4],
-                                backgroundColor: 'rgba(255, 99, 132, 0.8)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 2
+                                backgroundColor: [
+                                    'rgba(99, 102, 241, 0.4)',
+                                    'rgba(16, 185, 129, 0.4)',
+                                    'rgba(245, 158, 11, 0.4)',
+                                    'rgba(239, 68, 68, 0.4)'
+                                ],
+                                borderColor: [
+                                    'rgba(99, 102, 241, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)'
+                                ],
+                                borderWidth: 2,
+                                borderRadius: 8,
+                                borderSkipped: false,
+                                hoverBackgroundColor: [
+                                    'rgba(99, 102, 241, 0.6)',
+                                    'rgba(16, 185, 129, 0.6)',
+                                    'rgba(245, 158, 11, 0.6)',
+                                    'rgba(239, 68, 68, 0.6)'
+                                ],
+                                pointBackgroundColor: '#9CA3AF',
+                                pointBorderColor: '#9CA3AF',
+                                pointStyle: 'rect',
+                                legendColor: '#9CA3AF'
                             }]
                         },
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
-                                legend: { position: 'top' }
+                                legend: {
+                                    position: 'top',
+                                    labels: {
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        },
+                                        padding: 20,
+                                        usePointStyle: true,
+                                        pointStyle: 'rect',
+                                        generateLabels: function(chart) {
+                                            const original = Chart.defaults.plugins.legend.labels.generateLabels;
+                                            const labels = original.call(this, chart);
+                                            labels[0].text = 'Atendimentos Totais (Barra Escura)';
+                                            labels[0].fillStyle = '#374151';
+                                            labels[0].strokeStyle = '#374151';
+                                            labels[1].text = 'Diagnósticos na UPAE (Barra Clara)';
+                                            labels[1].fillStyle = '#9CA3AF';
+                                            labels[1].strokeStyle = '#9CA3AF';
+                                            return labels;
+                                        }
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                    titleColor: 'white',
+                                    bodyColor: 'white',
+                                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                                    borderWidth: 1,
+                                    cornerRadius: 8,
+                                    displayColors: true,
+                                    callbacks: {
+                                        title: function(context) {
+                                            return context[0].label;
+                                        },
+                                        label: function(context) {
+                                            const label = context.dataset.label || '';
+                                            const value = context.parsed.y;
+                                            if (label.includes('Atendimentos')) {
+                                                return `Atendimentos Totais: ${value}`;
+                                            } else {
+                                                return `Diagnósticos na UPAE: ${value}`;
+                                            }
+                                        }
+                                    }
+                                }
                             },
                             scales: {
                                 y: {
                                     beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 10,
+                                        color: '#374151',
+                                        font: {
+                                            size: 12,
+                                            weight: '500'
+                                        }
+                                    },
+                                    grid: {
+                                        color: 'rgba(0,0,0,0.05)',
+                                        drawBorder: false
+                                    },
                                     title: {
                                         display: true,
-                                        text: 'Quantidade'
+                                        text: 'Quantidade de Atendimentos',
+                                        color: '#374151',
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        }
                                     }
                                 },
                                 x: {
+                                    grid: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        maxRotation: 45,
+                                        minRotation: 45,
+                                        color: '#374151',
+                                        font: {
+                                            size: 12,
+                                            weight: '500'
+                                        }
+                                    },
                                     title: {
                                         display: true,
-                                        text: 'Tipos de Atendimento'
-                                    }
+                                        text: 'Especialidades',
+                                        color: '#374151',
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        }
+                                    },
+                                    categoryPercentage: 0.6,
+                                    barPercentage: 0.7
+                                }
+                            },
+                            layout: {
+                                padding: {
+                                    left: 20,
+                                    right: 20,
+                                    top: 20,
+                                    bottom: 20
                                 }
                             }
                         }
@@ -3532,19 +3689,59 @@
                             datasets: [{
                                 label: 'Atendimentos Totais',
                                 data: [69, 40, 22, 8],
-                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
-                                borderColor: 'rgba(54, 162, 235, 1)',
-                                borderWidth: 2,
-                                borderRadius: 4,
-                                borderSkipped: false
+                                backgroundColor: [
+                                    'rgba(99, 102, 241, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)'
+                                ],
+                                borderColor: [
+                                    'rgba(99, 102, 241, 1)',
+                                    'rgba(16, 185, 129, 1)',
+                                    'rgba(245, 158, 11, 1)',
+                                    'rgba(239, 68, 68, 1)'
+                                ],
+                                borderWidth: 3,
+                                borderRadius: 8,
+                                borderSkipped: false,
+                                hoverBackgroundColor: [
+                                    'rgba(99, 102, 241, 0.9)',
+                                    'rgba(16, 185, 129, 0.9)',
+                                    'rgba(245, 158, 11, 0.9)',
+                                    'rgba(239, 68, 68, 0.9)'
+                                ],
+                                pointBackgroundColor: '#374151',
+                                pointBorderColor: '#374151',
+                                pointStyle: 'rect',
+                                legendColor: '#374151'
                             }, {
                                 label: 'Diagnósticos na UPAE',
                                 data: [22, 13, 6, 4],
-                                backgroundColor: 'rgba(75, 192, 192, 0.8)',
-                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: [
+                                    'rgba(99, 102, 241, 0.4)',
+                                    'rgba(16, 185, 129, 0.4)',
+                                    'rgba(245, 158, 11, 0.4)',
+                                    'rgba(239, 68, 68, 0.4)'
+                                ],
+                                borderColor: [
+                                    'rgba(99, 102, 241, 0.8)',
+                                    'rgba(16, 185, 129, 0.8)',
+                                    'rgba(245, 158, 11, 0.8)',
+                                    'rgba(239, 68, 68, 0.8)'
+                                ],
                                 borderWidth: 2,
-                                borderRadius: 4,
-                                borderSkipped: false
+                                borderRadius: 8,
+                                borderSkipped: false,
+                                hoverBackgroundColor: [
+                                    'rgba(99, 102, 241, 0.6)',
+                                    'rgba(16, 185, 129, 0.6)',
+                                    'rgba(245, 158, 11, 0.6)',
+                                    'rgba(239, 68, 68, 0.6)'
+                                ],
+                                pointBackgroundColor: '#9CA3AF',
+                                pointBorderColor: '#9CA3AF',
+                                pointStyle: 'rect',
+                                legendColor: '#9CA3AF'
                             }]
                         },
                         options: {
@@ -3555,26 +3752,44 @@
                                     position: 'top',
                                     labels: {
                                         font: {
-                                            size: 12
+                                            size: 14,
+                                            weight: 'bold'
                                         },
+                                        padding: 20,
+                                        usePointStyle: true,
+                                        pointStyle: 'rect',
                                         generateLabels: function(chart) {
                                             const original = Chart.defaults.plugins.legend.labels.generateLabels;
                                             const labels = original.call(this, chart);
-                                            labels[0].text = ' Atendimentos Totais';
-                                            labels[1].text = ' Diagnósticos na UPAE';
+                                            labels[0].text = 'Atendimentos Totais (Barra Escura)';
+                                            labels[0].fillStyle = '#374151';
+                                            labels[0].strokeStyle = '#374151';
+                                            labels[1].text = 'Diagnósticos na UPAE (Barra Clara)';
+                                            labels[1].fillStyle = '#9CA3AF';
+                                            labels[1].strokeStyle = '#9CA3AF';
                                             return labels;
                                         }
                                     }
                                 },
                                 tooltip: {
+                                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                    titleColor: 'white',
+                                    bodyColor: 'white',
+                                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                                    borderWidth: 1,
+                                    cornerRadius: 8,
+                                    displayColors: true,
                                     callbacks: {
+                                        title: function(context) {
+                                            return context[0].label;
+                                        },
                                         label: function(context) {
                                             const label = context.dataset.label || '';
                                             const value = context.parsed.y;
                                             if (label.includes('Atendimentos')) {
-                                                return ` Atendimentos Totais: ${value}`;
+                                                return `Atendimentos Totais: ${value}`;
                                             } else {
-                                                return ` Diagnósticos na UPAE: ${value}`;
+                                                return `Diagnósticos na UPAE: ${value}`;
                                             }
                                         }
                                     }
@@ -3584,20 +3799,59 @@
                                 y: {
                                     beginAtZero: true,
                                     ticks: {
-                                        stepSize: 10
+                                        stepSize: 10,
+                                        color: '#374151',
+                                        font: {
+                                            size: 12,
+                                            weight: '500'
+                                        }
                                     },
                                     grid: {
-                                        color: 'rgba(0,0,0,0.1)'
+                                        color: 'rgba(0,0,0,0.05)',
+                                        drawBorder: false
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Quantidade de Atendimentos',
+                                        color: '#374151',
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        }
                                     }
                                 },
                                 x: {
                                     grid: {
-                                        color: 'rgba(0,0,0,0.1)'
+                                        display: false
                                     },
                                     ticks: {
                                         maxRotation: 45,
-                                        minRotation: 45
-                                    }
+                                        minRotation: 45,
+                                        color: '#374151',
+                                        font: {
+                                            size: 12,
+                                            weight: '500'
+                                        }
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Especialidades',
+                                        color: '#374151',
+                                        font: {
+                                            size: 14,
+                                            weight: 'bold'
+                                        }
+                                    },
+                                    categoryPercentage: 0.6,
+                                    barPercentage: 0.7
+                                }
+                            },
+                            layout: {
+                                padding: {
+                                    left: 20,
+                                    right: 20,
+                                    top: 20,
+                                    bottom: 20
                                 }
                             }
                         }
