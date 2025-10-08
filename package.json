@@ -1,0 +1,24 @@
+{
+  "name": "apresentacao-deborah",
+  "version": "1.0.0",
+  "description": "Apresentação interativa com análise de dados da UPAE",
+  "main": "presentation.html",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML'",
+    "start": "echo 'Static site ready for deployment'"
+  },
+  "keywords": [
+    "apresentacao",
+    "upa",
+    "dados",
+    "analise",
+    "dashboard"
+  ],
+  "author": "Alyson Galdencio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alysongaldencio/ApresentacaoDeborah.git"
+  },
+  "homepage": "https://apresentacao-deborah.vercel.app"
+}
