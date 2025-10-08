@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: url('background.png') no-repeat center center;
+            background: url('public/background.png') no-repeat center center;
             background-size: 100% 100%;
             background-attachment: fixed;
             min-height: 100vh;
@@ -367,7 +367,7 @@
             </div>
             
             <div class="content" style="display: flex; justify-content: center; align-items: center; height: 100%;">
-                <img src="UPAE.png" alt="UPAE Logo" style="max-width: 60%; max-height: 60%; object-fit: contain;">
+                <img src="public/UPAE.png" alt="UPAE Logo" style="max-width: 60%; max-height: 60%; object-fit: contain;">
             </div>
         </div>
 
@@ -528,74 +528,332 @@
             </div>
         </div>
 
-        <!-- Slide 5: Atendimentos por Setor -->
+        <!-- Slide 5: Serviço Social -->
         <div class="slide" id="slide5">
             <div class="header">
-                <h1> Atendimentos por Setor</h1>
-                <p>Distribuição Percentual dos Atendimentos por Área de Atuação | Janeiro - Agosto 2025</p>
+                <h1>Serviço Social</h1>
             </div>
             
-            <div class="content" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
-                <!-- Serviço Social -->
+            <div class="content" style="grid-template-columns: 1fr;">
                 <div class="section">
-                    <h2> Serviço Social</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="servicoSocialChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Psicologia -->
-                <div class="section">
-                    <h2> Psicologia</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="psicologiaChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Nutrição -->
-                <div class="section">
-                    <h2> Nutrição</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="nutricaoChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Radiologia -->
-                <div class="section">
-                    <h2> Radiologia</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="radiologiaChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Fisioterapia -->
-                <div class="section">
-                    <h2> Fisioterapia</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="fisioterapiaChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Fonoaudiologia -->
-                <div class="section">
-                    <h2> Fonoaudiologia</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="fonoaudiologiaChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- Terapia Ocupacional -->
-                <div class="section">
-                    <h2> Terapia Ocupacional</h2>
-                    <div class="chart-container" style="height: 300px;">
-                        <canvas id="terapiaOcupacionalChart"></canvas>
+                    <h2>📊 Porcentagem dos Atendimentos</h2>
+                    <div class="chart-container">
+                        <canvas id="servicoSocialAtendimentosChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 6: Projetos x CAF -->
+        <!-- Slide 6: Psicologia -->
         <div class="slide" id="slide6">
+            <div class="header">
+                <h1>Psicologia</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr;">
+                <div class="section">
+                    <h2>🧠 Atendimentos por Especialidade</h2>
+                    <div class="chart-container">
+                        <canvas id="psicologiaAtendimentosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>🎯 AÇÕES DA PSICOLOGIA</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">👥 Programa de Apoio Psicológico ao Colaborador (PAPC)</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Escuta individual e sigilosa para colaboradores, oferecendo suporte emocional e psicológico no ambiente de trabalho.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧘 Oficinas de Autocuidado</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Realizadas na última sexta-feira de cada mês, promovendo bem-estar e qualidade de vida dos colaboradores.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📅 Campanhas Temáticas</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Realizadas ao longo do ano, como Setembro Amarelo, Janeiro Branco, entre outras ações de conscientização sobre saúde mental.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏢 Intervenções no Clima Organizacional</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Desenvolvidas em parceria com o SESMET, visando fortalecer o ambiente de trabalho saudável e produtivo.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧠 Contratação de Neuropsicologia</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Nova empresa especializada em Neuropsicologia contratada para apoio ao projeto de Neuropediatria.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Nutrição -->
+        <div class="slide" id="slide7">
+            <div class="header">
+                <h1>Nutrição</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr 1fr;">
+                <div class="section">
+                    <h2>🍽️ Gastos com Almoço</h2>
+                    <div class="chart-container">
+                        <canvas id="nutricaoAlmocoChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🗑️ Desperdício</h2>
+                    <div class="chart-container">
+                        <canvas id="nutricaoDesperdicioChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>🎯 AÇÕES DA NUTRIÇÃO</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📋 Sistema de Registro Antecipado</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Implementar um sistema de registro antecipado para melhorar a organização (similar ao helpdesk).</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🎯 Meta Coletiva de Recursos</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Estimular o uso consciente de recursos e evitar desperdícios, estabelecendo uma meta coletiva mensal. Caso a equipe alcance a meta, o grupo será recompensado com um almoço especial ao final do mês.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Radiologia -->
+        <div class="slide" id="slide8">
+            <div class="header">
+                <h1>Radiologia</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr;">
+                <div class="section">
+                    <h2>📷 Exames Executados</h2>
+                    <div class="chart-container">
+                        <canvas id="radiologiaExamesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>🎯 ANDAMENTO DA RADIOLOGIA</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧽 Processo de Compra de Lenços</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Processo de compra dos lenços para limpeza dos cassetes de raio-X tem como objetivo melhorar a qualidade das imagens obtidas.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🎯 Diagnóstico de Câncer</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Atualmente, o diagnóstico de câncer ocorre em média em 29,5% das pacientes que realizaram apenas a mamografia.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📄 Impressão de Mamografias</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Impressão de 100% das mamografias em películas para garantir qualidade e arquivamento adequado.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📋 Raios-X com Laudos</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Os raios-X necessitam de laudos e impressão em película em apenas 5% dos casos realizados mensalmente.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Fisioterapia -->
+        <div class="slide" id="slide9">
+            <div class="header">
+                <h1>Fisioterapia</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr;">
+                <div class="section">
+                    <h2>🏥 Atendimentos</h2>
+                    <div class="chart-container">
+                        <canvas id="fisioterapiaAtendimentosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>🎯 AÇÕES DA FISIOTERAPIA</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏗️ Modernização do Ginásio</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Processo de autorização da SES em andamento para a modernização e melhoria das instalações do Ginásio de Fisioterapia.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📚 Treinamento e Atualização</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Treinamento e atualização mensais, conforme calendário planejado até dezembro de 2025.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">✅ Taxa de Alta</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Alta em 85% dos pacientes após 20 sessões, com resultados satisfatórios e comprovados.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📅 Agenda Preenchida</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Agenda 100% preenchida, demonstrando alta demanda e eficiência no atendimento.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">👥 Atividades In Loco</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Atividades realizadas in loco, promovendo bem-estar e prevenção de lesões entre os colaboradores.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Neuropediatria -->
+        <div class="slide" id="slide10">
+            <div class="header">
+                <h1>Neuropediatria</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div class="section">
+                    <h2>🗣️ Fonoaudiologia</h2>
+                    <div class="chart-container">
+                        <canvas id="neuropediatriaFonoChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>🎯 Terapia Ocupacional</h2>
+                    <div class="chart-container">
+                        <canvas id="neuropediatriaTOChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>📊 Atendimentos vs Diagnósticos</h2>
+                    <div class="chart-container">
+                        <canvas id="neuropediatriaAtendimentosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
+                    <h2>📋 Pendências</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Pendência</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏢 Adequação da Sala Multidisciplinar</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Adequação da Sala Multidisciplinar em fases finais para melhorar o atendimento integrado.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🪑 Ajuste da Sala de Espera</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Ajuste da sala de espera das crianças do projeto de Neuropediatria para maior conforto e adequação.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📄 Abertura de TE</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Abertura de TE para Fonoaudiologia e Terapia Ocupacional para formalizar os atendimentos.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Custo Mensal -->
+        <div class="slide" id="slide11">
+            <div class="header">
+                <h1>Farmácia</h1>
+                <p>Distribuição dos Custos Totais por Área de Atendimento</p>
+            </div>
+            
+            <div class="section">
+                <h2> Gráfico de Custos por Setor</h2>
+                <div class="chart-container">
+                    <canvas id="setorChart"></canvas>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="summary-card">
+                    <h3> Custo Total Geral</h3>
+                    <div class="value">R$ 812.265,61</div>
+                    <div class="label">Todos os setores</div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3> Setor de Maior Custo</h3>
+                    <div class="value positive">R$ 480.795,25</div>
+                    <div class="label">Bexiga Neurogênica</div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>📊 Custo Médio por Setor</h3>
+                    <div class="value">R$ 58.018,97</div>
+                    <div class="label">Média entre 14 setores</div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>💊 Setor de Menor Custo</h3>
+                    <div class="value negative">R$ 102,27</div>
+                    <div class="label">Limpeza e Higienização</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Projetos x CAF -->
+        <div class="slide" id="slide12">
             <div class="header">
                 <h1> Projetos x CAF</h1>
                 <p>Comparativo Mensal entre Projetos e CAF | Janeiro - Agosto 2025</p>
@@ -637,96 +895,9 @@
             </div>
         </div>
 
-        <!-- Slide 7: Custo Mensal -->
-        <div class="slide" id="slide7">
-            <div class="header">
-                <h1> Custos por Setor</h1>
-                <p>Distribuição dos Custos Totais por Área de Atendimento</p>
-            </div>
-            
-            <div class="section">
-                <h2> Gráfico de Custos por Setor</h2>
-                <div class="chart-container">
-                    <canvas id="setorChart"></canvas>
-                </div>
-            </div>
 
-            <div class="summary-section">
-                <div class="summary-card">
-                    <h3> Custo Total Geral</h3>
-                    <div class="value">R$ 812.265,61</div>
-                    <div class="label">Todos os setores</div>
-                </div>
-                
-                <div class="summary-card">
-                    <h3> Setor de Maior Custo</h3>
-                    <div class="value positive">R$ 480.795,25</div>
-                    <div class="label">Bexiga Neurogênica</div>
-                </div>
-                
-                <div class="summary-card">
-                    <h3>📊 Custo Médio por Setor</h3>
-                    <div class="value">R$ 58.018,97</div>
-                    <div class="label">Média entre 14 setores</div>
-                </div>
-                
-                <div class="summary-card">
-                    <h3>💊 Setor de Menor Custo</h3>
-                    <div class="value negative">R$ 102,27</div>
-                    <div class="label">Limpeza e Higienização</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: Teto Farmácia -->
-        <div class="slide" id="slide8">
-            <div class="header">
-                <h1>💊 Controle de Teto - Farmácia</h1>
-                <p>Monitoramento dos Custos Mensais vs Teto Estabelecido | Janeiro - Agosto 2025</p>
-            </div>
-            
-            <div class="section">
-                <h2>📊 Controle de Teto</h2>
-                <div class="chart-container">
-                    <canvas id="tetoFarmaciaChart"></canvas>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="summary-card">
-                    <h3>🎯 Teto Mensal</h3>
-                    <div class="value">R$ 29.500,00</div>
-                    <div class="label">Limite estabelecido</div>
-                </div>
-                
-                <div class="summary-card within-limit">
-                    <h3>✅ Meses Dentro do Limite</h3>
-                    <div class="value positive">5 de 8</div>
-                    <div class="label">62,5% de conformidade</div>
-                </div>
-                
-                <div class="summary-card over-limit">
-                    <h3>⚠️ Ultrapassagens</h3>
-                    <div class="value negative">3 meses</div>
-                    <div class="label">Abril, Julho e Agosto</div>
-                </div>
-                
-                <div class="summary-card within-limit">
-                    <h3>📊 Média Mensal</h3>
-                    <div class="value positive">R$ 27.472,12</div>
-                    <div class="label">Abaixo do teto</div>
-                </div>
-                
-                <div class="summary-card" style="border-left-color: #ff9f40;">
-                    <h3>🔶 Projeto</h3>
-                    <div class="value" style="color: #ff9f40;">R$ 14.976,37</div>
-                    <div class="label">Total em 4 meses (Fev, Abr, Jul, Ago)</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 9: Gastos por Setor -->
-        <div class="slide" id="slide9">
+        <!-- Slide 13: Gastos por Setor -->
+        <div class="slide" id="slide13">
             <div class="header">
                 <h1>💰 Gastos por Setor</h1>
                 <p>Distribuição dos Custos Totais por Área de Atendimento</p>
@@ -785,8 +956,8 @@
             </div>
         </div>
 
-        <!-- Slide 10: Análise de Saídas - Centro de Diagnóstico -->
-        <div class="slide" id="slide10">
+        <!-- Slide 14: Análise de Saídas - Centro de Diagnóstico -->
+        <div class="slide" id="slide14">
             <div class="header">
                 <h1>📊 Análise de Saídas - Centro de Diagnóstico</h1>
                 <p>Rankings de Itens por Quantidade e Valor | Janeiro - Agosto 2025</p>
@@ -929,8 +1100,8 @@
             </div>
         </div>
 
-        <!-- Slide 11: Análise de Saídas - Bloco Cirúrgico -->
-        <div class="slide" id="slide11">
+        <!-- Slide 15: Análise de Saídas - Bloco Cirúrgico -->
+        <div class="slide" id="slide15">
             <div class="header">
                 <h1>🏥 Análise de Saídas - Bloco Cirúrgico</h1>
                 <p>Rankings de Itens por Quantidade e Valor | Janeiro - Agosto 2025</p>
@@ -1085,8 +1256,8 @@
             </div>
         </div>
 
-        <!-- Slide 12: Análise de Saídas - Enfermaria -->
-        <div class="slide" id="slide12">
+        <!-- Slide 16: Análise de Saídas - Enfermaria -->
+        <div class="slide" id="slide16">
             <div class="header">
                 <h1>🏥 Análise de Saídas - Enfermaria</h1>
                 <p>Rankings de Itens por Quantidade e Valor | Janeiro - Agosto 2025</p>
@@ -1217,8 +1388,8 @@
             </div>
         </div>
 
-        <!-- Slide 13: Teto Especialidades -->
-        <div class="slide" id="slide13">
+        <!-- Slide 17: Teto Especialidades -->
+        <div class="slide" id="slide17">
             <div class="header">
                 <h1>🏥 Controle de Teto - Especialidades</h1>
                 <p>Monitoramento dos Custos Mensais vs Teto Estabelecido | Janeiro - Agosto 2025</p>
@@ -1280,8 +1451,8 @@
             </div>
         </div>
 
-        <!-- Slide 14: Análise de Produtos -->
-        <div class="slide" id="slide14">
+        <!-- Slide 18: Análise de Produtos -->
+        <div class="slide" id="slide18">
             <div class="header">
                 <h1>📦 Análise de Produtos</h1>
                 <p>Empréstimos Concedidos, Baixas por Validade e Estoque Parado | Janeiro - Agosto 2025</p>
@@ -1504,8 +1675,8 @@
             </div>
         </div>
 
-        <!-- Slide 15: Valor por Espécie -->
-        <div class="slide" id="slide15">
+        <!-- Slide 19: Valor por Espécie -->
+        <div class="slide" id="slide19">
             <div class="header">
                 <h1> Estoque sem Movimentação > 1 ano </h1>
                 <p>|Agosto 2025|</p>
@@ -1543,350 +1714,8 @@
             </div>
         </div>
 
-        <!-- Slide 16: Imagem HCP -->
-        <div class="slide" id="slide16">
-            <div class="header">
-                <h1>HCP</h1>
-            </div>
-            
-            <div class="content" style="display: flex; justify-content: center; align-items: center; height: 100%;">
-                <img src="HCP.png" alt="HCP Logo" style="max-width: 60%; max-height: 60%; object-fit: contain;">
-            </div>
-        </div>
-
-        <!-- Slide 17: Serviço Social -->
-        <div class="slide" id="slide17">
-            <div class="header">
-                <h1>Serviço Social</h1>
-            </div>
-            
-            <div class="content">
-                <div class="section">
-                    <h2>🥧 Problemáticas Serviço Social</h2>
-                    <div class="chart-container">
-                        <canvas id="servicoSocialProblematicasChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>📊 Porcentagem dos Atendimentos</h2>
-                    <div class="chart-container">
-                        <canvas id="servicoSocialAtendimentosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>🎯 AÇÕES DO SERVIÇO SOCIAL</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📋 Sala de Espera - Prioridades por Lei</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Informar aos usuários sobre o que é considerado prioridade por lei, incluindo pacientes com necessidades especiais, idosos, gestantes e pessoas com condições de saúde que exigem atendimento imediato.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">⏰ Sala de Espera - Transparência no Atendimento</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Explicar como funciona a espera para consultas médicas, garantindo transparência sobre o tempo estimado e a ordem de atendimento.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📅 Processo de Marcação</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Explicar sobre a marcação de consultas: Detalhar o processo de agendamento de consultas na unidade, incluindo procedimentos e documentos necessários.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">👶 Acompanhamento de Famílias com Microcefalia</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Orientar e apoiar as famílias para o acompanhamento contínuo da criança, preparando-as para a possível alta hospitalar e garantindo que saibam como manter os cuidados necessários em casa.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 18: Psicologia -->
-        <div class="slide" id="slide18">
-            <div class="header">
-                <h1>Psicologia</h1>
-            </div>
-            
-            <div class="content" style="grid-template-columns: 1fr;">
-                <div class="section">
-                    <h2>🧠 Atendimentos por Especialidade</h2>
-                    <div class="chart-container">
-                        <canvas id="psicologiaAtendimentosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>🎯 AÇÕES DA PSICOLOGIA</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">👥 Programa de Apoio Psicológico ao Colaborador (PAPC)</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Escuta individual e sigilosa para colaboradores, oferecendo suporte emocional e psicológico no ambiente de trabalho.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧘 Oficinas de Autocuidado</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Realizadas na última sexta-feira de cada mês, promovendo bem-estar e qualidade de vida dos colaboradores.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📅 Campanhas Temáticas</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Realizadas ao longo do ano, como Setembro Amarelo, Janeiro Branco, entre outras ações de conscientização sobre saúde mental.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏢 Intervenções no Clima Organizacional</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Desenvolvidas em parceria com o SESMET, visando fortalecer o ambiente de trabalho saudável e produtivo.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧠 Contratação de Neuropsicologia</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Nova empresa especializada em Neuropsicologia contratada para apoio ao projeto de Neuropediatria.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 19: Radiologia -->
-        <div class="slide" id="slide19">
-            <div class="header">
-                <h1>Radiologia</h1>
-            </div>
-            
-            <div class="content" style="grid-template-columns: 1fr;">
-                <div class="section">
-                    <h2>📷 Exames Executados</h2>
-                    <div class="chart-container">
-                        <canvas id="radiologiaExamesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>🎯 ANDAMENTO DA RADIOLOGIA</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🧽 Processo de Compra de Lenços</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Processo de compra dos lenços para limpeza dos cassetes de raio-X tem como objetivo melhorar a qualidade das imagens obtidas.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🎯 Diagnóstico de Câncer</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Atualmente, o diagnóstico de câncer ocorre em média em 29,5% das pacientes que realizaram apenas a mamografia.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📄 Impressão de Mamografias</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Impressão de 100% das mamografias em películas para garantir qualidade e arquivamento adequado.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📋 Raios-X com Laudos</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Os raios-X necessitam de laudos e impressão em película em apenas 5% dos casos realizados mensalmente.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 20: Fisioterapia -->
+        <!-- Slide 20: Andamento das OCI's -->
         <div class="slide" id="slide20">
-            <div class="header">
-                <h1>Fisioterapia</h1>
-            </div>
-            
-            <div class="content" style="grid-template-columns: 1fr;">
-                <div class="section">
-                    <h2>🏥 Atendimentos</h2>
-                    <div class="chart-container">
-                        <canvas id="fisioterapiaAtendimentosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>🎯 AÇÕES DA FISIOTERAPIA</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏗️ Modernização do Ginásio</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Processo de autorização da SES em andamento para a modernização e melhoria das instalações do Ginásio de Fisioterapia.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📚 Treinamento e Atualização</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Treinamento e atualização mensais, conforme calendário planejado até dezembro de 2025.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">✅ Taxa de Alta</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Alta em 85% dos pacientes após 20 sessões, com resultados satisfatórios e comprovados.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📅 Agenda Preenchida</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Agenda 100% preenchida, demonstrando alta demanda e eficiência no atendimento.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">👥 Atividades In Loco</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Atividades realizadas in loco, promovendo bem-estar e prevenção de lesões entre os colaboradores.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 21: Nutrição -->
-        <div class="slide" id="slide21">
-            <div class="header">
-                <h1>Nutrição</h1>
-            </div>
-            
-            <div class="content" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="section">
-                    <h2>🥗 Atendimentos por Especialidade</h2>
-                    <div class="chart-container">
-                        <canvas id="nutricaoAtendimentosChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>🍽️ Gastos com Almoço</h2>
-                    <div class="chart-container">
-                        <canvas id="nutricaoAlmocoChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>🗑️ Desperdício</h2>
-                    <div class="chart-container">
-                        <canvas id="nutricaoDesperdicioChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>🎯 AÇÕES DA NUTRIÇÃO</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📋 Sistema de Registro Antecipado</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Implementar um sistema de registro antecipado para melhorar a organização (similar ao helpdesk).</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🎯 Meta Coletiva de Recursos</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Estimular o uso consciente de recursos e evitar desperdícios, estabelecendo uma meta coletiva mensal. Caso a equipe alcance a meta, o grupo será recompensado com um almoço especial ao final do mês.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 22: Neuropediatria -->
-        <div class="slide" id="slide22">
-            <div class="header">
-                <h1>Neuropediatria</h1>
-            </div>
-            
-            <div class="content" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="section">
-                    <h2>🗣️ Fonoaudiologia</h2>
-                    <div class="chart-container">
-                        <canvas id="neuropediatriaFonoChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>🎯 Terapia Ocupacional</h2>
-                    <div class="chart-container">
-                        <canvas id="neuropediatriaTOChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>📊 Atendimentos vs Diagnósticos</h2>
-                    <div class="chart-container">
-                        <canvas id="neuropediatriaAtendimentosChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <div class="summary-section">
-                <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2>📋 Pendências</h2>
-                    <div class="table-container" style="margin-top: 20px;">
-                        <table class="data-table">
-                            <thead>
-                                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Pendência</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🏢 Adequação da Sala Multidisciplinar</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Adequação da Sala Multidisciplinar em fases finais para melhorar o atendimento integrado.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">🪑 Ajuste da Sala de Espera</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Ajuste da sala de espera das crianças do projeto de Neuropediatria para maior conforto e adequação.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">📄 Abertura de TE</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Abertura de TE para Fonoaudiologia e Terapia Ocupacional para formalizar os atendimentos.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 23: Andamento das OCI's -->
-        <div class="slide" id="slide23">
             <div class="header">
                 <h1>📅 Andamento das OCI's</h1>
                 <p>Cronograma de Implementação | Setembro - Outubro 2025</p>
@@ -1947,6 +1776,17 @@
             </div>
         </div>
 
+        <!-- Slide 21: Imagem HCP -->
+        <div class="slide" id="slide21">
+            <div class="header">
+                <h1>HCP</h1>
+            </div>
+            
+            <div class="content" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+                <img src="public/HCP.png" alt="HCP Logo" style="max-width: 60%; max-height: 60%; object-fit: contain;">
+            </div>
+        </div>
+
     </div>
 
     </div>
@@ -1955,7 +1795,7 @@
     <div class="navigation">
         <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
         <div class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">23</span>
+            <span id="currentSlide">1</span> / <span id="totalSlides">21</span>
         </div>
         <div class="slide-dots" id="slideDots"></div>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Próximo →</button>
@@ -1963,7 +1803,7 @@
 
     <script>
         let currentSlideIndex = 0;
-        const totalSlides = 23;
+        const totalSlides = 21;
 
 
         function showSlide(index) {
@@ -2033,44 +1873,6 @@
             backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
         };
 
-        // Dados para slide 13 - Atendimentos por Setor
-        const setoresData = {
-            servicoSocial: {
-                labels: ['Ajuda para marcação ou Encaixe', 'Relatório para outros serviços'],
-                data: [85, 15],
-                backgroundColor: ['#FF6384', '#36A2EB']
-            },
-            psicologia: {
-                labels: ['Ansiedade', 'Depressão', 'Outros Traumas'],
-                data: [75, 15, 10],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-            },
-            nutricao: {
-                labels: ['Obesidade', 'Hipertenção', 'Diabetes', 'Dislipidemia', 'Outros'],
-                data: [46, 17, 15, 15, 7],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
-            },
-            radiologia: {
-                labels: ['Mamografia', 'Raio-x', 'Densitometria'],
-                data: [38, 51, 11],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-            },
-            fisioterapia: {
-                labels: ['Reumatologia', 'Neurologia', 'Pediatria', 'Saúde da Mulher', 'Outros'],
-                data: [70, 9, 4, 3, 14],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
-            },
-            fonoaudiologia: {
-                labels: ['AVC', 'Paralisia cerebral', 'Microcefalia', 'Outros'],
-                data: [40, 20, 30, 10],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0']
-            },
-            terapiaOcupacional: {
-                labels: ['Sindromes do nurodesenvolvimento', 'AVC', 'Outros'],
-                data: [75, 10, 15],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-            }
-        };
 
         function initializeSlideCharts(slideIndex) {
             // Verificar se os gráficos já foram inicializados
@@ -2265,17 +2067,21 @@
                 }
             }
             
-            if (slideIndex === 3) { // Slide 4: Atendimentos por Setor
-                // Serviço Social
-                const servicoSocialCtx = document.getElementById('servicoSocialChart');
-                if (servicoSocialCtx) {
-                    new Chart(servicoSocialCtx, {
+            if (slideIndex === 4) { // Slide 5: Serviço Social
+                const servicoSocialAtendimentosCtx = document.getElementById('servicoSocialAtendimentosChart');
+                if (servicoSocialAtendimentosCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.servicoSocialAtendimentosChartInstance) {
+                        window.servicoSocialAtendimentosChartInstance.destroy();
+                    }
+                    
+                    window.servicoSocialAtendimentosChartInstance = new Chart(servicoSocialAtendimentosCtx, {
                         type: 'pie',
                         data: {
-                            labels: setoresData.servicoSocial.labels,
+                            labels: ['Ajuda para marcação ou Encaixe', 'Relatório para outros serviços'],
                             datasets: [{
-                                data: setoresData.servicoSocial.data,
-                                backgroundColor: setoresData.servicoSocial.backgroundColor,
+                                data: [85, 15],
+                                backgroundColor: ['#FF6384', '#36A2EB'],
                                 borderWidth: 2,
                                 borderColor: '#fff'
                             }]
@@ -2284,108 +2090,111 @@
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
+                                legend: { position: 'bottom' }
+                            }
+                        }
+                    });
+                }
+                return;
+            }
+            
+            if (slideIndex === 5) { // Slide 6: Psicologia
+                const psicologiaAtendimentosCtx = document.getElementById('psicologiaAtendimentosChart');
+                if (psicologiaAtendimentosCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.psicologiaAtendimentosChartInstance) {
+                        window.psicologiaAtendimentosChartInstance.destroy();
+                    }
+                    
+                    window.psicologiaAtendimentosChartInstance = new Chart(psicologiaAtendimentosCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Ansiedade', 'Depressão', 'Outros Traumas'],
+                            datasets: [{
+                                data: [75, 15, 10],
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                                borderWidth: 2,
+                                borderColor: '#fff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
                                 }
                             }
                         }
                     });
                 }
-
-                // Psicologia
-                const psicologiaCtx = document.getElementById('psicologiaChart');
-                if (psicologiaCtx) {
-                    new Chart(psicologiaCtx, {
-                        type: 'pie',
+                return;
+            }
+            
+            if (slideIndex === 6) { // Slide 7: Nutrição
+                const nutricaoAlmocoCtx = document.getElementById('nutricaoAlmocoChart');
+                if (nutricaoAlmocoCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.nutricaoAlmocoChartInstance) {
+                        window.nutricaoAlmocoChartInstance.destroy();
+                    }
+                    
+                    window.nutricaoAlmocoChartInstance = new Chart(nutricaoAlmocoCtx, {
+                        type: 'line',
                         data: {
-                            labels: setoresData.psicologia.labels,
+                            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
                             datasets: [{
-                                data: setoresData.psicologia.data,
-                                backgroundColor: setoresData.psicologia.backgroundColor,
-                                borderWidth: 2,
-                                borderColor: '#fff'
+                                label: 'Gastos com Almoço (R$)',
+                                data: [1200, 1350, 1100, 1400, 1300, 1250, 1450, 1500],
+                                borderColor: '#FF6384',
+                                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.4
                             }]
                         },
                         options: {
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
                                 }
                             }
                         }
                     });
                 }
-
-                // Nutrição
-                const nutricaoCtx = document.getElementById('nutricaoChart');
-                if (nutricaoCtx) {
-                    new Chart(nutricaoCtx, {
-                        type: 'pie',
+                
+                const nutricaoDesperdicioCtx = document.getElementById('nutricaoDesperdicioChart');
+                if (nutricaoDesperdicioCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.nutricaoDesperdicioChartInstance) {
+                        window.nutricaoDesperdicioChartInstance.destroy();
+                    }
+                    
+                    window.nutricaoDesperdicioChartInstance = new Chart(nutricaoDesperdicioCtx, {
+                        type: 'bar',
                         data: {
-                            labels: setoresData.nutricao.labels,
+                            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto'],
                             datasets: [{
-                                data: setoresData.nutricao.data,
-                                backgroundColor: setoresData.nutricao.backgroundColor,
+                                label: 'Desperdício (KG)',
+                                data: [84.8, 75.3, 58.7, 77.1, 76.1, 71.7, 87.3, 88.2],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.8)', // Vermelho
+                                    'rgba(54, 162, 235, 0.8)', // Azul
+                                    'rgba(255, 206, 86, 0.8)', // Amarelo
+                                    'rgba(75, 192, 192, 0.8)', // Verde-azulado
+                                    'rgba(153, 102, 255, 0.8)', // Roxo
+                                    'rgba(255, 159, 64, 0.8)', // Laranja
+                                    'rgba(199, 199, 199, 0.8)', // Cinza
+                                    'rgba(83, 102, 255, 0.8)'  // Azul escuro
+                                ],
                                 borderWidth: 2,
                                 borderColor: '#fff'
                             }]
@@ -2394,256 +2203,20 @@
                             responsive: true,
                             maintainAspectRatio: false,
                             plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Quilogramas (KG)'
                                     }
                                 },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
-
-                // Radiologia
-                const radiologiaCtx = document.getElementById('radiologiaChart');
-                if (radiologiaCtx) {
-                    new Chart(radiologiaCtx, {
-                        type: 'pie',
-                        data: {
-                            labels: setoresData.radiologia.labels,
-                            datasets: [{
-                                data: setoresData.radiologia.data,
-                                backgroundColor: setoresData.radiologia.backgroundColor,
-                                borderWidth: 2,
-                                borderColor: '#fff'
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
-
-                // Fisioterapia
-                const fisioterapiaCtx = document.getElementById('fisioterapiaChart');
-                if (fisioterapiaCtx) {
-                    new Chart(fisioterapiaCtx, {
-                        type: 'pie',
-                        data: {
-                            labels: setoresData.fisioterapia.labels,
-                            datasets: [{
-                                data: setoresData.fisioterapia.data,
-                                backgroundColor: setoresData.fisioterapia.backgroundColor,
-                                borderWidth: 2,
-                                borderColor: '#fff'
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
-
-                // Fonoaudiologia
-                const fonoaudiologiaCtx = document.getElementById('fonoaudiologiaChart');
-                if (fonoaudiologiaCtx) {
-                    new Chart(fonoaudiologiaCtx, {
-                        type: 'pie',
-                        data: {
-                            labels: setoresData.fonoaudiologia.labels,
-                            datasets: [{
-                                data: setoresData.fonoaudiologia.data,
-                                backgroundColor: setoresData.fonoaudiologia.backgroundColor,
-                                borderWidth: 2,
-                                borderColor: '#fff'
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-                }
-
-                // Terapia Ocupacional
-                const terapiaOcupacionalCtx = document.getElementById('terapiaOcupacionalChart');
-                if (terapiaOcupacionalCtx) {
-                    new Chart(terapiaOcupacionalCtx, {
-                        type: 'pie',
-                        data: {
-                            labels: setoresData.terapiaOcupacional.labels,
-                            datasets: [{
-                                data: setoresData.terapiaOcupacional.data,
-                                backgroundColor: setoresData.terapiaOcupacional.backgroundColor,
-                                borderWidth: 2,
-                                borderColor: '#fff'
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    position: 'bottom',
-                                    labels: {
-                                        generateLabels: function(chart) {
-                                            const data = chart.data;
-                                            if (data.labels.length && data.datasets.length) {
-                                                const dataset = data.datasets[0];
-                                                const total = dataset.data.reduce((a, b) => a + b, 0);
-                                                return data.labels.map((label, i) => {
-                                                    const value = dataset.data[i];
-                                                    const percentage = ((value / total) * 100).toFixed(1);
-                                                    return {
-                                                        text: `${label}: ${value}% (${percentage}%)`,
-                                                        fillStyle: dataset.backgroundColor[i],
-                                                        strokeStyle: dataset.borderColor,
-                                                        lineWidth: dataset.borderWidth,
-                                                        hidden: false,
-                                                        index: i
-                                                    };
-                                                });
-                                            }
-                                            return [];
-                                        }
-                                    }
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        label: function(context) {
-                                            return `${context.label}: ${context.parsed}%`;
-                                        }
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Meses'
                                     }
                                 }
                             }
@@ -2653,7 +2226,227 @@
                 return;
             }
             
-            if (slideIndex === 4) { // Slide 5: Projetos x CAF
+            if (slideIndex === 7) { // Slide 8: Radiologia
+                const radiologiaExamesCtx = document.getElementById('radiologiaExamesChart');
+                if (radiologiaExamesCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.radiologiaExamesChartInstance) {
+                        window.radiologiaExamesChartInstance.destroy();
+                    }
+                    
+                    window.radiologiaExamesChartInstance = new Chart(radiologiaExamesCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Mamografia', 'Raio-x', 'Densitometria'],
+                            datasets: [{
+                                data: [38, 51, 11],
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                                borderWidth: 2,
+                                borderColor: '#fff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+                return;
+            }
+            
+            if (slideIndex === 8) { // Slide 9: Fisioterapia
+                const fisioterapiaAtendimentosCtx = document.getElementById('fisioterapiaAtendimentosChart');
+                if (fisioterapiaAtendimentosCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.fisioterapiaAtendimentosChartInstance) {
+                        window.fisioterapiaAtendimentosChartInstance.destroy();
+                    }
+                    
+                    window.fisioterapiaAtendimentosChartInstance = new Chart(fisioterapiaAtendimentosCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Reumatologia', 'Neurologia', 'Pediatria', 'Saúde da Mulher', 'Outros'],
+                            datasets: [{
+                                data: [70, 9, 4, 3, 14],
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                                borderWidth: 2,
+                                borderColor: '#fff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                }
+                return;
+            }
+            
+            if (slideIndex === 9) { // Slide 10: Neuropediatria
+                const neuropediatriaFonoCtx = document.getElementById('neuropediatriaFonoChart');
+                if (neuropediatriaFonoCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.neuropediatriaFonoChartInstance) {
+                        window.neuropediatriaFonoChartInstance.destroy();
+                    }
+                    
+                    window.neuropediatriaFonoChartInstance = new Chart(neuropediatriaFonoCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['AVC', 'Paralisia cerebral', 'Microcefalia', 'Outros'],
+                            datasets: [{
+                                data: [40, 20, 30, 10],
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                                borderWidth: 2,
+                                borderColor: '#fff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' }
+                            }
+                        }
+                    });
+                }
+                
+                const neuropediatriaTOCtx = document.getElementById('neuropediatriaTOChart');
+                if (neuropediatriaTOCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.neuropediatriaTOChartInstance) {
+                        window.neuropediatriaTOChartInstance.destroy();
+                    }
+                    
+                    window.neuropediatriaTOChartInstance = new Chart(neuropediatriaTOCtx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Sindromes do nurodesenvolvimento', 'AVC', 'Outros'],
+                            datasets: [{
+                                data: [75, 10, 15],
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                                borderWidth: 2,
+                                borderColor: '#fff'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' }
+                            }
+                        }
+                    });
+                }
+                
+                const neuropediatriaAtendimentosCtx = document.getElementById('neuropediatriaAtendimentosChart');
+                if (neuropediatriaAtendimentosCtx) {
+                    // Destruir gráfico existente se houver
+                    if (window.neuropediatriaAtendimentosChartInstance) {
+                        window.neuropediatriaAtendimentosChartInstance.destroy();
+                    }
+                    
+                    window.neuropediatriaAtendimentosChartInstance = new Chart(neuropediatriaAtendimentosCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Consultas de Neuropediatria', 'Avaliação da Fonoaudiologia', 'Avaliação da Terapia Ocupacional', 'Avaliação da Psicologia'],
+                            datasets: [{
+                                label: 'Atendimentos',
+                                data: [69, 40, 22, 8],
+                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 2
+                            }, {
+                                label: 'Diagnósticos',
+                                data: [22, 13, 6, 4],
+                                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'top' }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Quantidade'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Tipos de Atendimento'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+                return;
+            }
+            
+            if (slideIndex === 10) { // Slide 11: Custo Mensal
+                // Gráfico de Setores
+                const setorCtx = document.getElementById('setorChart');
+                if (setorCtx) {
+                new Chart(setorCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['SESMT', 'Fisioterapia', 'Nutrição', 'Fonoaudiologia', 'Bloco Cirúrgico', 'Mamografia', 'Centro de Diagnóstico', 'Ambulatório Geral', 'Enfermaria', 'Ostomia', 'Pé Diabético', 'Bexiga Neurogênica', 'Limpeza e Higienização', 'CME'],
+                        datasets: [{
+                            label: 'Custo por Setor (R$)',
+                            data: [1044.80, 1246.02, 225.67, 1259.75, 61471.81, 11047.69, 71812.96, 13675.08, 25736.87, 126161.42, 807.06, 480795.25, 102.27, 17178.96],
+                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                            borderColor: 'rgba(102, 126, 234, 1)',
+                            borderWidth: 4,
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top' }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return 'R$ ' + (value/1000).toFixed(0) + 'k';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+                }
+            }
+            
+            if (slideIndex === 11) { // Slide 12: Projetos x CAF
                 // Gráfico Projetos x CAF
                 const consumoNotasCtx = document.getElementById('consumoNotasChart');
                 if (consumoNotasCtx) {
@@ -2775,116 +2568,8 @@
                 }
             }
             
-            if (slideIndex === 5) { // Slide 6: Custo Mensal
-                // Gráfico de Setores
-                const setorCtx = document.getElementById('setorChart');
-                if (setorCtx) {
-                new Chart(setorCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['SESMT', 'Fisioterapia', 'Nutrição', 'Fonoaudiologia', 'Bloco Cirúrgico', 'Mamografia', 'Centro de Diagnóstico', 'Ambulatório Geral', 'Enfermaria', 'Ostomia', 'Pé Diabético', 'Bexiga Neurogênica', 'Limpeza e Higienização', 'CME'],
-                        datasets: [{
-                            label: 'Custo por Setor (R$)',
-                            data: [1044.80, 1246.02, 225.67, 1259.75, 61471.81, 11047.69, 71812.96, 13675.08, 25736.87, 126161.42, 807.06, 480795.25, 102.27, 17178.96],
-                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            borderWidth: 4,
-                            fill: true,
-                            tension: 0.3
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { position: 'top' }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: function(value) {
-                                        return 'R$ ' + (value/1000).toFixed(0) + 'k';
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-                }
-            }
             
-            if (slideIndex === 6) { // Slide 7: Teto Farmácia
-                // Gráfico Teto Farmácia
-                const tetoFarmaciaCtx = document.getElementById('tetoFarmaciaChart');
-                if (tetoFarmaciaCtx) {
-                const farmaciaData = {
-                    labels: ['Jan/25', 'Fev/25', 'Mar/25', 'Abr/25', 'Mai/25', 'Jun/25', 'Jul/25', 'Ago/25'],
-                    custos: [19399.65, 24321.46, 19571.02, 33452.77, 27747.01, 27306.78, 30851.43, 37127.53],
-                    projeto: [0, 1659.58, 0, 9749.73, 0, 0, 811.33, 2755.73],
-                    teto: 29500.00
-                };
-                
-                // Calcular a diferença (custo real - projeto)
-                const diferenca = farmaciaData.custos.map((custo, index) => custo - farmaciaData.projeto[index]);
-
-                new Chart(tetoFarmaciaCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: farmaciaData.labels,
-                        datasets: [{
-                            label: 'Custo Real (sem projeto)',
-                            data: diferenca,
-                            backgroundColor: diferenca.map((value, index) => 
-                                farmaciaData.custos[index] > farmaciaData.teto ? 'rgba(220, 53, 69, 0.8)' : 'rgba(40, 167, 69, 0.8)'
-                            ),
-                            borderColor: diferenca.map((value, index) => 
-                                farmaciaData.custos[index] > farmaciaData.teto ? 'rgba(220, 53, 69, 1)' : 'rgba(40, 167, 69, 1)'
-                            ),
-                            borderWidth: 2
-                        }, {
-                            label: 'Projeto',
-                            data: farmaciaData.projeto,
-                            backgroundColor: 'rgba(255, 159, 64, 0.8)',
-                            borderColor: 'rgba(255, 159, 64, 1)',
-                            borderWidth: 2
-                        }, {
-                            label: 'Teto Estabelecido',
-                            data: Array(8).fill(farmaciaData.teto),
-                            type: 'line',
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                            borderWidth: 4,
-                            borderDash: [10, 5],
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { position: 'top' }
-                        },
-                        scales: {
-                            x: {
-                                stacked: true
-                            },
-                            y: {
-                                stacked: true,
-                                beginAtZero: true,
-                                ticks: {
-                                    callback: function(value) {
-                                        return 'R$ ' + (value/1000).toFixed(0) + 'k';
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-                }
-            }
-            
-            if (slideIndex === 7) { // Slide 8: Gastos por Setor
+            if (slideIndex === 12) { // Slide 13: Gastos por Setor
                 // Gráfico de Gastos por Setor
                 const gastosSetorCtx = document.getElementById('gastosSetorChart');
                 if (gastosSetorCtx) {
@@ -2961,23 +2646,23 @@
                 createGastosTable();
             }
             
-            if (slideIndex === 8) { // Slide 9: Análise de Saídas (sem gráficos)
+            if (slideIndex === 13) { // Slide 14: Análise de Saídas (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 9) { // Slide 10: Análise de Saídas - Bloco Cirúrgico (sem gráficos)
+            if (slideIndex === 14) { // Slide 15: Análise de Saídas - Bloco Cirúrgico (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 10) { // Slide 11: Análise de Saídas - Enfermaria (sem gráficos)
+            if (slideIndex === 15) { // Slide 16: Análise de Saídas - Enfermaria (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 11) { // Slide 12: Análise de Produtos (sem gráficos)
+            if (slideIndex === 16) { // Slide 17: Análise de Produtos (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 13) { // Slide 14: Valor por Espécie
+            if (slideIndex === 18) { // Slide 19: Valor por Espécie
                 const especieCtx = document.getElementById('especieChart');
                 if (especieCtx) {
                     // Destruir gráfico existente se houver
@@ -3043,7 +2728,7 @@
             }
             
             
-            if (slideIndex === 12) { // Slide 13: Teto Especialidades
+            if (slideIndex === 17) { // Slide 18: Teto Especialidades
                 // Gráfico Teto Especialidades
                 const tetoEspecialidadesCtx = document.getElementById('tetoEspecialidadesChart');
                 if (tetoEspecialidadesCtx) {
@@ -3106,7 +2791,7 @@
                 createEspecialidadesTable();
             }
             
-            if (slideIndex === 16) { // Slide 17: Serviço Social
+            if (slideIndex === 20) { // Slide 21: Imagem HCP
                 const servicoSocialCtx = document.getElementById('servicoSocialProblematicasChart');
                 if (servicoSocialCtx) {
                     // Destruir gráfico existente se houver
@@ -3247,7 +2932,7 @@
                 }
             }
             
-            if (slideIndex === 17) { // Slide 18: Psicologia
+            if (slideIndex === 16) { // Slide 17: Psicologia
                 const psicologiaAtendimentosCtx = document.getElementById('psicologiaAtendimentosChart');
                 if (psicologiaAtendimentosCtx) {
                     // Destruir gráfico existente se houver
@@ -3316,7 +3001,7 @@
                 }
             }
             
-            if (slideIndex === 18) { // Slide 19: Radiologia
+            if (slideIndex === 17) { // Slide 18: Radiologia
                 const radiologiaExamesCtx = document.getElementById('radiologiaExamesChart');
                 if (radiologiaExamesCtx) {
                     // Destruir gráfico existente se houver
@@ -3389,7 +3074,7 @@
                 }
             }
             
-            if (slideIndex === 19) { // Slide 20: Fisioterapia
+            if (slideIndex === 18) { // Slide 19: Fisioterapia
                 const fisioterapiaAtendimentosCtx = document.getElementById('fisioterapiaAtendimentosChart');
                 if (fisioterapiaAtendimentosCtx) {
                     // Destruir gráfico existente se houver
@@ -3462,7 +3147,7 @@
                 }
             }
             
-            if (slideIndex === 20) { // Slide 21: Nutrição
+            if (slideIndex === 19) { // Slide 20: Nutrição
                 const nutricaoAtendimentosCtx = document.getElementById('nutricaoAtendimentosChart');
                 if (nutricaoAtendimentosCtx) {
                     // Destruir gráfico existente se houver
@@ -3688,7 +3373,7 @@
                 }
             }
             
-            if (slideIndex === 21) { // Slide 22: Neuropediatria
+            if (slideIndex === 26) { // Slide 27: Andamento das OCI's
                 // Gráfico de pizza - Fonoaudiologia
                 const neuropediatriaFonoCtx = document.getElementById('neuropediatriaFonoChart');
                 if (neuropediatriaFonoCtx) {
