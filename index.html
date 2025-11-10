@@ -374,6 +374,52 @@
                 font-size: 12px;
             }
         }
+        
+        /* Modal para ampliar imagem */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+        
+        .image-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .image-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .image-modal-close:hover {
+            color: #ccc;
+        }
+        
+        .clickable-image {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .clickable-image:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -686,7 +732,7 @@
                 </div>
             </div>
 
-            <div class="summary-section">
+            <div class="summary-section" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="summary-card">
                     <h3>Custo Total (sem Extra)</h3>
                     <div class="value">R$ 108.062,47</div>
@@ -703,12 +749,6 @@
                     <h3>Maior Custo</h3>
                     <div class="value positive">R$ 66.260,35</div>
                     <div class="label">Projeto Bexiga Neurogênica</div>
-                </div>
-                
-                <div class="summary-card">
-                    <h3>Menor Custo</h3>
-                    <div class="value negative">R$ 10.500,00</div>
-                    <div class="label">Extra - Cirurgias de Catarata</div>
                 </div>
             </div>
         </div>
@@ -1510,7 +1550,7 @@
                 <div class="section">
                     <h2> Ação da TI</h2>
                     <div style="display: flex; justify-content: center; align-items: center; height: 100%; padding: 20px;">
-                        <img src="public/chamada.png" alt="Ação da TI" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img id="acaoTiImage" src="public/chamada.png" alt="Ação da TI" class="clickable-image" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>
@@ -3081,6 +3121,53 @@
         }
         
     </script>
+    
+    <!-- Modal para ampliar imagem -->
+    <div id="imageModal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage" src="" alt="Imagem ampliada">
+    </div>
+    
+    <script>
+        // Funcionalidade para ampliar imagem da Ação da TI
+        const acaoTiImage = document.getElementById('acaoTiImage');
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.image-modal-close');
+        
+        if (acaoTiImage) {
+            acaoTiImage.addEventListener('click', function() {
+                modalImage.src = this.src;
+                imageModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                imageModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        if (imageModal) {
+            imageModal.addEventListener('click', function(e) {
+                if (e.target === imageModal) {
+                    imageModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+        
+        // Fechar modal com tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && imageModal.style.display === 'block') {
+                imageModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+    
     </div> <!-- Fechamento da div presentation-container -->
 </body>
 </html>
