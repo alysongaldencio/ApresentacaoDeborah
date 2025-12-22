@@ -424,8 +424,7 @@
 </head>
 <body>
     <div class="presentation-container">
-        <!-- Slide 1: Calendário de Reuniões -->
-        <!-- Slide 1: Slide Vazio -->
+        <!-- Slide 1: UPAE Caruaru -->
         <div class="slide active" id="slide1">
             <div class="header">
                 <h1>UPAE CARUARU - MINISTRO FERNANDO LYRA</h1>
@@ -436,8 +435,8 @@
             </div>
         </div>
 
-        <!-- Slide 3: Gráfico Comparativo -->
-        <div class="slide" id="slide3">
+        <!-- Slide 2: Desempenho Mensal - Executado vs Meta -->
+        <div class="slide" id="slide2">
             <div class="header">
                 <h1> Desempenho Mensal - Executado vs Meta</h1>
                 <p>Comparativo de Consultas Multidisciplinares e Sessões de Reabilitação | Janeiro - Novembro 2025</p>
@@ -483,8 +482,8 @@
             </div>
         </div>
 
-        <!-- Slide 4: Altas/Inclusões -->
-        <div class="slide" id="slide4">
+        <!-- Slide 3: Altas/Inclusões -->
+        <div class="slide" id="slide3">
             <div class="header">
                 <h1>Altas/Inclusões</h1>
             </div>
@@ -530,8 +529,8 @@
             </div>
         </div>
 
-        <!-- Slide 7: Nutrição -->
-        <div class="slide" id="slide7">
+        <!-- Slide 4: Nutrição -->
+        <div class="slide" id="slide4">
             <div class="header">
                 <h1>Nutrição</h1>
             </div>
@@ -594,8 +593,8 @@
             </div>
         </div>
 
-        <!-- Slide 8: Radiologia -->
-        <div class="slide" id="slide8">
+        <!-- Slide 5: Radiologia -->
+        <div class="slide" id="slide5">
             <div class="header">
                 <h1>Radiologia</h1>
             </div>
@@ -636,9 +635,39 @@
             </div>
         </div>
 
+        <!-- Slide 6: Farmácia -->
+        <div class="slide" id="slide6">
+            <div class="header">
+                <h1>Farmácia</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr;">
+                <div class="section">
+                    <h2>Custos Médios da Farmácia</h2>
+                    <div class="chart-container">
+                        <canvas id="farmaciaCustosChart"></canvas>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Slide 12: Análise de Saídas - Centro de Diagnóstico -->
-        <div class="slide" id="slide12">
+            <div class="summary-section" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="summary-card">
+                    <h3>Custo Total</h3>
+                    <div class="value">R$ 103.245,17</div>
+                    <div class="label">Projetos e Insumos Assistenciais</div>
+                </div>
+                
+                <div class="summary-card">
+                    <h3>Maior Custo</h3>
+                    <div class="value positive">R$ 66.260,35</div>
+                    <div class="label">Projeto Bexiga Neurogênica</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slide 7: Análise de Saídas - Centro de Diagnóstico -->
+        <div class="slide" id="slide7">
             <div class="header">
                 <h1> Análise de Saídas </h1>
                 <p>| Novembro de 2025</p>
@@ -775,8 +804,8 @@
             </div>
         </div>
 
-        <!-- Slide 19: Análise de Produtos -->
-        <div class="slide" id="slide19">
+        <!-- Slide 8: Análise de Produtos -->
+        <div class="slide" id="slide8">
             <div class="header">
                 <h1> Análise de Produtos</h1>
                 <p>Empréstimos Concedidos, Baixas por Validade e Estoque Parado | Janeiro - Novembro 2025</p>
@@ -848,7 +877,7 @@
                                 <tr>
                                     <td style="font-weight: 600;">Novembro</td>
                                     <td style="color: #dc3545; font-weight: 600;">R$ 529,01</td>
-                                    <td>LENTE INTRAOCULAR DOBRAVEL, EPINEFRINA, CATETER NASAL P/ OXIGENIO TIPO OCULOS ADULTO ESTERIL</td>
+                                    <td>LENTE INTRAOCULAR DOBRAVEL, CLOPIDOGREL 75MG</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -864,31 +893,23 @@
 
             <div class="summary-section">
                 <div class="section" style="grid-column: 1 / -1; margin-bottom: 20px;">
-                    <h2> AÇÕES DA FARMÁCIA</h2>
+                    <h2> Análise do Inventário</h2>
                     <div class="table-container" style="margin-top: 20px;">
                         <table class="data-table">
                             <thead>
                                 <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Ação</th>
-                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none;">Descrição</th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none; width: 30%;"></th>
+                                    <th style="padding: 15px 20px; text-align: left; font-weight: 600; border: none; width: 70%;">Análise do Inventário</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Contagem Semanal</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Contagem semanal efetuada por corredor</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; font-weight: 500; color: #2c3e50;">O que deu certo</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; color: #555;">Bipagem, contagem semanal, controle de lotes com verificação de 2 fatores, organização dos carros de paradas com itens do mesmo lote</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Projeto de Glaucoma</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Encaminhar todos os documentos relacionados ao Projeto de Glaucoma para armazenamento e registro na Farmácia do Estado, garantindo organização e fácil acesso para consultas futuras</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Enderecamento SOUL MV</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Planejamento futuro: Enderecamento sera feito via SOUL MV para modernizacao do controle</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Emenda</td>
-                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Lentes de catarata e Hemoclip</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; font-weight: 500; color: #2c3e50;">O que precisamos melhorar</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; color: #555;">Endereçamento dos itens, organizar melhor o dia anterior, melhor comunicação com a enfermagem para checagem dos carrinhos de parada</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -897,8 +918,155 @@
             </div>
         </div>
 
-        <!-- Slide 20: Neuropediatria -->
-        <div class="slide" id="slide20">
+        <!-- Slide 9: Empréstimos -->
+        <div class="slide" id="slide9">
+            <div class="header">
+                <h1>Empréstimos</h1>
+            </div>
+            
+            <div class="content" style="grid-template-columns: 1fr 1fr;">
+                <div class="section">
+                    <h2>EMPRÉSTIMOS CONCEDIDOS</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <div style="overflow-x: auto;">
+                            <table class="data-table" style="font-size: 0.9em;">
+                                <thead>
+                                    <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                        <th style="padding: 12px 15px; text-align: left; font-weight: 600; border: none;">Fornecedor</th>
+                                        <th style="padding: 12px 15px; text-align: right; font-weight: 600; border: none;">Valor Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UPAE BELO JARDIM</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 10.044,37</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UPAE ARCOVERDE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 4.595,58</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UNIMED CARUARU</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 1.759,87</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">FUNDO MUNICIPAL DE SAÚDE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 96,55</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL DA MULHER DO AGRESTE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 65,88</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL DO TRICENTENÁRIO</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 105,40</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">INSTITUTO DE MEDICINA INTEGRAL</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 2.666,43</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UNIDADE DE UROLOGIA DO AGRESTE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 207,75</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HSS - SOCIEDADE PERNAMBUCANA</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 462,22</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL MEMORIAL SÃO GABRIEL</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 856,55</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL REGIONAL DO AGRESTE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 103,71</td>
+                                    </tr>
+                                    <tr style="background-color: #f8f9fa; border-top: 2px solid #667eea;">
+                                        <td style="padding: 12px 15px; font-weight: 600; color: #2c3e50;">TOTAL GERAL CONCEDIDO:</td>
+                                        <td style="padding: 12px 15px; text-align: right; font-weight: 700; color: #667eea;">R$ 20.964,31</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2>EMPRÉSTIMOS RECEBIDOS</h2>
+                    <div class="table-container" style="margin-top: 20px;">
+                        <div style="overflow-x: auto;">
+                            <table class="data-table" style="font-size: 0.9em;">
+                                <thead>
+                                    <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                        <th style="padding: 12px 15px; text-align: left; font-weight: 600; border: none;">Fornecedor</th>
+                                        <th style="padding: 12px 15px; text-align: right; font-weight: 600; border: none;">Valor Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL MEMORIAL ALZIRA RIBEIRO</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 2.060,55</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL REGIONAL DO AGRESTE</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 2.176,67</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HMR - SOCIEDADE PERNAMBUCANA</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 1.506,04</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HOSPITAL MEMORIAL SÃO GABRIEL</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 354,94</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UNIMED CARUARU</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 420,40</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">HSS - SOCIEDADE PERNAMBUCANA</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 119,12</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UPAE ARRUDA</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 13,56</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 12px 15px; color: #2c3e50;">UPAE BELO JARDIM</td>
+                                        <td style="padding: 12px 15px; text-align: right; color: #555; font-weight: 500;">R$ 983,19</td>
+                                    </tr>
+                                    <tr style="background-color: #f8f9fa; border-top: 2px solid #667eea;">
+                                        <td style="padding: 12px 15px; font-weight: 600; color: #2c3e50;">TOTAL GERAL RECEBIDO:</td>
+                                        <td style="padding: 12px 15px; text-align: right; font-weight: 700; color: #667eea;">R$ 7.634,47</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section" style="grid-template-columns: repeat(3, 1fr); margin-top: 30px;">
+                <div class="summary-card" style="border-left-color: #dc3545;">
+                    <h3>Total Concedido</h3>
+                    <div class="value" style="color: #dc3545;">R$ 20.964,31</div>
+                </div>
+                
+                <div class="summary-card" style="border-left-color: #28a745;">
+                    <h3>Total Recebido</h3>
+                    <div class="value" style="color: #28a745;">R$ 7.634,47</div>
+                </div>
+                
+                <div class="summary-card" style="border-left-color: #667eea;">
+                    <h3>Saldo Líquido</h3>
+                    <div class="value" style="color: #667eea;">R$ 13.329,84</div>
+                    <div class="label">Concedido - Recebido</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Neuropediatria -->
+        <div class="slide" id="slide10">
             <div class="header">
                 <h1>Neuropediatria</h1>
             </div>
@@ -950,6 +1118,10 @@
                                     <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Neuropediatra</td>
                                     <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Possibilidade de voluntários para recreação com as crianças (o HCP tem alguma ação para isso?)</td>
                                 </tr>
+                                <tr>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 30%; font-weight: 500; color: #2c3e50;">Altas</td>
+                                    <td style="padding: 15px 20px; vertical-align: top; width: 70%; color: #555;">Outubro 20 / Novembro 5</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -964,37 +1136,8 @@
                 </div>
                 </div>
                 
-        <!-- Slide 11: Custo Mensal -->
+        <!-- Slide 11: Cronogramas e Atividades -->
         <div class="slide" id="slide11">
-            <div class="header">
-                <h1>Farmácia</h1>
-            </div>
-            
-                <div class="section">
-                <h2>Custos Médios da Farmácia</h2>
-                    <div class="chart-container">
-                    <canvas id="farmaciaCustosChart"></canvas>
-                </div>
-            </div>
-
-            <div class="summary-section" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="summary-card">
-                    <h3>Custo Total</h3>
-                    <div class="value">R$ 103.245,17</div>
-                    <div class="label">Projetos e Insumos Assistenciais</div>
-                </div>
-                
-                <div class="summary-card">
-                    <h3>Maior Custo</h3>
-                    <div class="value positive">R$ 66.260,35</div>
-                    <div class="label">Projeto Bexiga Neurogênica</div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Slide 21: Andamento das OCI's -->
-        <div class="slide" id="slide21">
             <div class="header">
                 <h1> Cronogramas e Atividades</h1>
             </div>
@@ -1181,12 +1324,16 @@
                             </table>
                         </div>
                     </div>
+                    
+                    <div style="margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+                        <img id="controleImage" src="public/controle.jpeg" alt="Controle de Uso do Formaldeído" class="clickable-image" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 22: Imagem HCP -->
-        <div class="slide" id="slide22">
+        <!-- Slide 12: Imagem HCP -->
+        <div class="slide" id="slide12">
             <div class="header">
                 <h1>HCP</h1>
             </div>
@@ -1204,7 +1351,7 @@
     <div class="navigation">
         <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
         <div class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
+            <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
         </div>
         <div class="slide-dots" id="slideDots"></div>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Próximo →</button>
@@ -1212,7 +1359,7 @@
 
     <script>
         let currentSlideIndex = 0;
-        const totalSlides = 11;
+        const totalSlides = 12;
 
 
         function showSlide(index) {
@@ -1308,7 +1455,7 @@
                 return;
             }
             
-            if (slideIndex === 1) { // Slide 3: Gráfico Comparativo (Desempenho Mensal)
+            if (slideIndex === 1) { // Slide 2: Desempenho Mensal - Executado vs Meta
                 // Gráfico de Consultas
                 const consultasCtx = document.getElementById('consultasChart');
                 if (consultasCtx) {
@@ -1390,7 +1537,7 @@
                 }
             }
             
-            if (slideIndex === 2) { // Slide 4: Altas/Inclusões
+            if (slideIndex === 2) { // Slide 3: Altas/Inclusões
                 // Gráfico de Altas das Sessões
                 const altasSessoesCtx = document.getElementById('altasSessoesChart');
                 if (altasSessoesCtx) {
@@ -1590,7 +1737,7 @@
                 }
             }
             
-            if (slideIndex === 3) { // Slide 7: Nutrição
+            if (slideIndex === 3) { // Slide 4: Nutrição
                 const nutricaoAlmocoCtx = document.getElementById('nutricaoAlmocoChart');
                 if (nutricaoAlmocoCtx) {
                     // Destruir gráfico existente se houver
@@ -1835,7 +1982,7 @@
                 return;
             }
             
-            if (slideIndex === 4) { // Slide 8: Radiologia
+            if (slideIndex === 4) { // Slide 5: Radiologia
                 const radiologiaInsumosCtx = document.getElementById('radiologiaInsumosChart');
                 if (radiologiaInsumosCtx) {
                     // Destruir gráfico existente se houver
@@ -1930,7 +2077,7 @@
                 return;
             }
             
-            if (slideIndex === 5) { // Slide 10: Neuropediatria
+            if (slideIndex === 9) { // Slide 10: Neuropediatria
                 // Gráfico Fonoaudiologia
                 const fonoaudiologiaCtx = document.getElementById('fonoaudiologiaChart');
                 if (fonoaudiologiaCtx) {
@@ -2314,7 +2461,7 @@
                 return;
             }
             
-            if (slideIndex === 6) { // Slide 11: Farmácia
+            if (slideIndex === 5) { // Slide 6: Farmácia
                 // Gráfico de Custos Médios da Farmácia
                 const farmaciaCustosCtx = document.getElementById('farmaciaCustosChart');
                 if (farmaciaCustosCtx) {
@@ -2336,10 +2483,6 @@
                     const gradient3 = ctx.createLinearGradient(0, 0, 0, 400);
                     gradient3.addColorStop(0, 'rgba(168, 85, 247, 0.9)');
                     gradient3.addColorStop(1, 'rgba(147, 51, 234, 0.9)');
-                    
-                    const gradient4 = ctx.createLinearGradient(0, 0, 0, 400);
-                    gradient4.addColorStop(0, 'rgba(239, 68, 68, 0.9)');
-                    gradient4.addColorStop(1, 'rgba(220, 38, 38, 0.9)');
                     
                     window.farmaciaCustosChartInstance = new Chart(farmaciaCustosCtx, {
                         type: 'bar',
@@ -2487,15 +2630,19 @@
                 }
             }
             
-            if (slideIndex === 7) { // Slide 12: Análise de Saídas (sem gráficos)
+            if (slideIndex === 6) { // Slide 7: Análise de Saídas (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 8) { // Slide 13: Análise de Saídas - Centro de Diagnóstico (sem gráficos)
+            if (slideIndex === 7) { // Slide 8: Análise de Produtos (sem gráficos)
                 return;
             }
             
-            if (slideIndex === 9) { // Slide 21: Andamento das OCI's
+            if (slideIndex === 8) { // Slide 9: Empréstimos (sem gráficos)
+                return;
+            }
+            
+            if (slideIndex === 10) { // Slide 11: Cronogramas e Atividades
                 // Gráfico de pizza - Fonoaudiologia
                 const neuropediatriaFonoCtx = document.getElementById('neuropediatriaFonoChart');
                 if (neuropediatriaFonoCtx) {
@@ -2675,6 +2822,16 @@
         
         if (acaoTiImage) {
             acaoTiImage.addEventListener('click', function() {
+                modalImage.src = this.src;
+                imageModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        
+        // Funcionalidade para ampliar imagem do Controle de Formaldeído
+        const controleImage = document.getElementById('controleImage');
+        if (controleImage) {
+            controleImage.addEventListener('click', function() {
                 modalImage.src = this.src;
                 imageModal.style.display = 'block';
                 document.body.style.overflow = 'hidden';
